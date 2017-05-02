@@ -1,6 +1,6 @@
 # AeQ eSports Manager
 
-Management tool for AeQ eSports, written with Angular 2 and Typescript.
+Management tool for AeQ eSports, written with [Angular 2](https://github.com/angular/angular) and Typescript.
 
 ## Setup
 
