@@ -13,3 +13,9 @@ npm start
 ```
 
 After that navigate to `http://localhost:4200/` in your browser.
+
+## Contributing
+
+Before contributing, please have a look at the [contribution guidlines](https://github.com/Glains/aeq-esports-manager/blob/master/CONTRIBUTING.md).
+
+Bugs, feature requests or proposals can be submitted through [a new issue](https://github.com/Glains/aeq-esports-manager/issues/new) or pull-request.
