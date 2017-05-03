@@ -1,8 +1,9 @@
 import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from "@angular/core";
-import { AbstractControl, FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from "@angular/forms";
+import { FakeAuthService } from "../../services/fake-auth.service";
 
 @Component({
-    selector: 'app-login',
+    selector: 'aem-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
     encapsulation: ViewEncapsulation.None
@@ -16,9 +17,9 @@ export class LoginComponent implements OnInit {
     /**
      * Whether authentication is currently is progress.
      */
-    private _loading: boolean = false;
+    loading: boolean = false;
 
-    constructor(private _fb: FormBuilder) {
+    constructor(private _fb: FormBuilder, private _authService: FakeAuthService) {
         this.initializeLoginForm();
     }
 
@@ -44,7 +45,15 @@ export class LoginComponent implements OnInit {
      * Attempts to login the user with the specified credentials. Delegated to the login service.
      */
     login() {
-        // TODO
+        let username = this.usernameCtrl.value;
+        let password = this.passwordCtrl.value;
+        this._authService.login(username, password).then(() => {
+            // TODO successful login
+        }).catch(() => {
+            this.loginForm.setErrors({
+                invalidLogin: true
+            });
+        });
     }
 
     /**

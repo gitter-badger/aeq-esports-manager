@@ -17,8 +17,14 @@
               <input mdInput type="password" formControlName="password"
                      placeholder="Passwort">
             </md-input-container>
-            <md-checkbox color="primary">Angemeldet bleiben?</md-checkbox>
-            <button md-raised-button color="primary" id="login-btn" (click)="login()">Anmelden</button>
+            <md-checkbox color="primary">Meinen Benutzernamen speichern?</md-checkbox>
+            <!-- validation errors -->
+            <div class="form-error" *ngIf="loginForm.hasError('invalidLogin')">
+              Der Benutzername oder das Passwort ist falsch.
+            </div>
+            <button md-raised-button color="primary" id="login-btn" (click)="login()"
+                    [disabled]="!loginForm.valid || loading">Anmelden
+            </button>
             <div class="button-bar">
               <a md-button (click)="redirectToRegisterPage()">Registrieren</a>
               <a md-button (click)="redirectToRecoverPasswordPage()">Passwort vergessen?</a>
