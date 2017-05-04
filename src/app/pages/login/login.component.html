@@ -1,3 +1,37 @@
-<p>
-  login works!
-</p>
+<div class="wrapper">
+  <div class="content">
+    <md-card>
+      <md-card-content>
+        <md-card-title>
+          Aequilibritas eSports
+        </md-card-title>
+        <md-card-subtitle>
+          Melde dich mit deinem AeQ-Account an.
+        </md-card-subtitle>
+        <md-card-content>
+          <form [formGroup]="loginForm">
+            <md-input-container>
+              <input mdInput type="text" formControlName="username" placeholder="Benutzername">
+            </md-input-container>
+            <md-input-container>
+              <input mdInput type="password" formControlName="password"
+                     placeholder="Passwort">
+            </md-input-container>
+            <md-checkbox color="primary">Meinen Benutzernamen speichern?</md-checkbox>
+            <!-- validation errors -->
+            <div class="form-error" *ngIf="loginForm.hasError('invalidLogin')">
+              Der Benutzername oder das Passwort ist falsch.
+            </div>
+            <button md-raised-button color="primary" id="login-btn" (click)="login()"
+                    [disabled]="!loginForm.valid || loading">Anmelden
+            </button>
+            <div class="button-bar">
+              <a md-button (click)="redirectToRegisterPage()">Registrieren</a>
+              <a md-button (click)="redirectToRecoverPasswordPage()">Passwort vergessen?</a>
+            </div>
+          </form>
+        </md-card-content>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

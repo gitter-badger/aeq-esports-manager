@@ -1,15 +1,73 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from "@angular/core";
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from "@angular/forms";
+import { FakeAuthService } from "../../services/fake-auth.service";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'aem-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+    public loginForm: FormGroup;
+    public usernameCtrl: AbstractControl;
+    public passwordCtrl: AbstractControl;
 
-  ngOnInit() {
-  }
+    /**
+     * Whether authentication is currently is progress.
+     */
+    loading: boolean = false;
+
+    constructor(private _fb: FormBuilder, private _authService: FakeAuthService) {
+        this.initializeLoginForm();
+    }
+
+    ngOnInit() {
+
+    }
+
+    /**
+     * Initializes the login form.
+     */
+    private initializeLoginForm() {
+        this.loginForm = this._fb.group({
+            username: ['', Validators.required],
+            password: ['', Validators.compose([
+                Validators.required
+            ])]
+        });
+        this.usernameCtrl = this.loginForm.get('username');
+        this.passwordCtrl = this.loginForm.get('password');
+    }
+
+    /**
+     * Attempts to login the user with the specified credentials. Delegated to the login service.
+     */
+    login() {
+        let username = this.usernameCtrl.value;
+        let password = this.passwordCtrl.value;
+        this._authService.login(username, password).then(() => {
+            // TODO successful login
+        }).catch(() => {
+            this.loginForm.setErrors({
+                invalidLogin: true
+            });
+        });
+    }
+
+    /**
+     * Redirects to the registration form foe a new user.
+     */
+    redirectToRegisterPage() {
+        // TODO
+    }
+
+    /**
+     * Redirects to the recover password page.
+     */
+    redirectToRecoverPasswordPage() {
+        // TODO
+    }
 
 }
