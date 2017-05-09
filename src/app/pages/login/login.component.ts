@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from "@angular/core";
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from "@angular/forms";
 import { FakeAuthService } from "../../services/fake-auth.service";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'aem-login',
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
      */
     loading: boolean = false;
 
-    constructor(private _fb: FormBuilder, private _authService: FakeAuthService) {
+    constructor(private _fb: FormBuilder, private _authService: FakeAuthService, private _router: Router) {
         this.initializeLoginForm();
     }
 
@@ -48,7 +49,7 @@ export class LoginComponent implements OnInit {
         let username = this.usernameCtrl.value;
         let password = this.passwordCtrl.value;
         this._authService.login(username, password).then(() => {
-            // TODO successful login
+            this._router.navigate(['home']);
         }).catch(() => {
             this.loginForm.setErrors({
                 invalidLogin: true
