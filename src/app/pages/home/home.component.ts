@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MdIconRegistry } from "@angular/material";
+import { Component, OnInit } from "@angular/core";
+import { appConfig } from "../../config/app.config";
 
 @Component({
   selector: 'aem-home',
@@ -7,6 +7,8 @@ import { MdIconRegistry } from "@angular/material";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  version: String = appConfig.version;
 
   constructor() {
 
