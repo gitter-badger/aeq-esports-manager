@@ -3,13 +3,19 @@ import { RouterModule, Routes }  from '@angular/router';
 
 import { LoginComponent } from "./pages/login/login.component";
 import { LoginModule } from "./pages/login/login.module";
+import { HomeComponent } from "./pages/home/home.component";
+import { HomeModule } from "./pages/home/home.module";
 
 const appRoutes: Routes = [
     {
         path: 'login',
         component: LoginComponent
     },
-    {path: '', redirectTo: '/login', pathMatch: 'full'},
+    {
+        path: 'home',
+        component: HomeComponent
+    },
+    {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', redirectTo: '/login'}
 ];
 
@@ -19,7 +25,8 @@ const appRoutes: Routes = [
     ],
     exports: [
         RouterModule,
-        LoginModule
+        LoginModule,
+        HomeModule
     ],
     providers: []
 })
