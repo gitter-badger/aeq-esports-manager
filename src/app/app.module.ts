@@ -8,6 +8,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { LoginModule } from "./pages/login/login.module";
 import { AppComponent } from './app.component';
 import { FakeAuthService } from "./services/fake-auth.service";
+import { MdListModule } from "@angular/material";
+import { CovalentLayoutModule } from "@covalent/core";
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { FakeAuthService } from "./services/fake-auth.service";
         FormsModule,
         HttpModule,
         AppRoutingModule,
-        LoginModule
+        LoginModule,
+        MdListModule,
+        CovalentLayoutModule
     ],
     providers: [FakeAuthService],
     bootstrap: [AppComponent]
