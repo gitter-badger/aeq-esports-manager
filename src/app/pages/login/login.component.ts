@@ -1,5 +1,5 @@
-import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from "@angular/core";
-import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from "@angular/forms";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { AbstractControl, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { FakeAuthService } from "../../services/fake-auth.service";
 import { Router } from "@angular/router";
 
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
         let username = this.usernameCtrl.value;
         let password = this.passwordCtrl.value;
         this._authService.login(username, password).then(() => {
-            this._router.navigate(['home']);
+          this._router.navigate(['users']);
         }).catch(() => {
             this.loginForm.setErrors({
                 invalidLogin: true
