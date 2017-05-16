@@ -4,6 +4,7 @@ import { RouterModule } from "@angular/router";
 import { UsersComponent } from "./users.component";
 import { CovalentLayoutModule } from "@covalent/core";
 import { MdButtonModule, MdIconModule, MdListModule, MdToolbarModule } from "@angular/material";
+import { UserComponent } from "./user/user.component";
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { MdButtonModule, MdIconModule, MdListModule, MdToolbarModule } from "@an
     MdListModule,
     MdButtonModule
   ],
-  declarations: [UsersComponent],
+  declarations: [UsersComponent, UserComponent],
   exports: [UsersComponent]
 })
 export class UsersModule {
