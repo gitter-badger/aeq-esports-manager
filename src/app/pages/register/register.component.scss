@@ -1,0 +1,25 @@
+.td-step-content {
+  margin-left: 10px;
+}
+
+.equal-width {
+  display: flex;
+  justify-content: space-between;
+}
+
+.equal-width-item {
+  flex-grow: 1;
+}
+
+.mat-input-container {
+  margin: 10px 10px 0px 10px;
+}
+
+#txtEmail, #txtUsername {
+  display: flex;
+  flex-grow: 1;
+}
+
+section {
+  margin-bottom: 20px;
+}

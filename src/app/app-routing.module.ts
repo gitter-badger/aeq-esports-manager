@@ -7,6 +7,8 @@ import { HomeComponent } from "./pages/home/home.component";
 import { HomeModule } from "./pages/home/home.module";
 import { UsersComponent } from "./pages/users/users.component";
 import { UsersModule } from "./pages/users/users.module";
+import { RegisterModule } from "./pages/register/register.module";
+import { RegisterComponent } from "./pages/register/register.component";
 
 const appRoutes: Routes = [
   {
@@ -14,14 +16,18 @@ const appRoutes: Routes = [
     component: HomeComponent,
     children: [
       {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
         path: 'users',
         component: UsersComponent
       }
     ]
-  },
-  {
-    path: 'login',
-    component: LoginComponent
   },
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', redirectTo: '/login'}
@@ -35,7 +41,8 @@ const appRoutes: Routes = [
     RouterModule,
     LoginModule,
     HomeModule,
-    UsersModule
+    UsersModule,
+    RegisterModule
   ],
   providers: []
 })
