@@ -4,6 +4,7 @@ import { RouterModule } from "@angular/router";
 import { RegisterComponent } from "./register.component";
 import { CovalentLayoutModule, CovalentStepsModule } from "@covalent/core";
 import { MdButtonModule, MdCardModule, MdInputModule } from "@angular/material";
+import { GameCardComponent } from "./game-card/game-card.component";
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { MdButtonModule, MdCardModule, MdInputModule } from "@angular/material";
     MdInputModule,
     MdCardModule
   ],
-  declarations: [RegisterComponent],
+  declarations: [RegisterComponent, GameCardComponent],
   exports: [RegisterComponent]
 })
 export class RegisterModule {
