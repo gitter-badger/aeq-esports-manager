@@ -7,7 +7,7 @@ import { HomeComponent } from "./pages/home/home.component";
 import { HomeModule } from "./pages/home/home.module";
 import { UsersComponent } from "./pages/users/users.component";
 import { UsersModule } from "./pages/users/users.module";
-import { AdmittanceModule } from "./pages/admittance/admittance.module";
+import { AdmittanceModule } from "./pages/admittances/admittance.module";
 
 const appRoutes: Routes = [
   {
