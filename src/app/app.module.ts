@@ -10,6 +10,7 @@ import { AppComponent } from "./app.component";
 import { FakeAuthService } from "./services/fake-auth.service";
 import { MdListModule } from "@angular/material";
 import { CovalentLayoutModule, TdMediaService } from "@covalent/core";
+import { RouterModule } from "@angular/router";
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { CovalentLayoutModule, TdMediaService } from "@covalent/core";
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,

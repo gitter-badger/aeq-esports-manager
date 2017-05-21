@@ -7,8 +7,7 @@ import { HomeComponent } from "./pages/home/home.component";
 import { HomeModule } from "./pages/home/home.module";
 import { UsersComponent } from "./pages/users/users.component";
 import { UsersModule } from "./pages/users/users.module";
-import { RegisterModule } from "./pages/register/register.module";
-import { RegisterComponent } from "./pages/register/register.component";
+import { AdmittanceModule } from "./pages/admittance/admittance.module";
 
 const appRoutes: Routes = [
   {
@@ -18,10 +17,6 @@ const appRoutes: Routes = [
       {
         path: 'login',
         component: LoginComponent
-      },
-      {
-        path: 'register',
-        component: RegisterComponent
       },
       {
         path: 'users',
@@ -35,14 +30,11 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes)
-  ],
-  exports: [
-    RouterModule,
+    RouterModule.forRoot(appRoutes),
     LoginModule,
     HomeModule,
     UsersModule,
-    RegisterModule
+    AdmittanceModule
   ],
   providers: []
 })
