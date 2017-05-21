@@ -15,14 +15,14 @@ const appRoutes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: 'login',
-        component: LoginComponent
-      },
-      {
         path: 'users',
         component: UsersComponent
       }
     ]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', redirectTo: '/login'}
