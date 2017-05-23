@@ -1,23 +1,26 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { CovalentLayoutModule } from "@covalent/core";
+import { CovalentDataTableModule, CovalentLayoutModule } from "@covalent/core";
 import { MdButtonModule, MdCardModule, MdIconModule, MdListModule, MdToolbarModule } from "@angular/material";
 import { AdmittancesComponent } from "./admittances.component";
 import { AdmittanceDetailComponent } from "./admittance-detail/admittance-detail.component";
-import { AdmittanceRoutingModule } from "./admittance-routing.module";
 
 @NgModule({
   imports: [
     CommonModule,
     CovalentLayoutModule,
+    CovalentDataTableModule,
     MdToolbarModule,
     MdButtonModule,
     MdListModule,
     MdIconModule,
-    MdCardModule,
-    AdmittanceRoutingModule
+    MdCardModule
   ],
   declarations: [
+    AdmittancesComponent,
+    AdmittanceDetailComponent
+  ],
+  exports: [
     AdmittancesComponent,
     AdmittanceDetailComponent
   ]

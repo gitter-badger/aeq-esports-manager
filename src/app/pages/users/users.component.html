@@ -7,20 +7,20 @@
   </md-toolbar>
   <md-nav-list td-sidenav-content
                (click)="!media.query('gt-sm') && manageList.close()">
-    <a md-list-item routerLink="/admittances">
+    <a md-list-item routerLink="admittances" (click)="setTitle('Bewerbungen')">
       <md-icon>rate_review</md-icon>
       Bewerbungen
     </a>
-    <a md-list-item>
+    <a md-list-item (click)="setTitle('Rekruten')">
       <md-icon>school</md-icon>
       Rekruten</a>
     <md-divider></md-divider>
-    <a md-list-item>
+    <a md-list-item (click)="setTitle('Mitglieder')">
       <md-icon>people</md-icon>
       Mitglieder</a>
   </md-nav-list>
   <div td-toolbar-content layout="row" layout-align="start center" flex>
-    <span>Optional Subtitle</span>
+    <span>{{title}}</span>
     <span flex></span>
     <button md-icon-button>
       <md-icon class="md-24">btn1</md-icon>

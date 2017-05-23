@@ -8,11 +8,17 @@ import { TdMediaService } from "@covalent/core";
 })
 export class UsersComponent implements AfterViewInit {
 
+  title: String = "";
+
   constructor(public media: TdMediaService) {
   }
 
   ngAfterViewInit() {
     this.media.broadcast()
+  }
+
+  setTitle(title: String) {
+    this.title = title;
   }
 
 }
