@@ -1,6 +1,7 @@
 <td-layout #layout>
   <td-navigation-drawer logo="" sidenavTitle="AeQ eSports Manager" name="Vorname Nachname">
     <md-nav-list>
+      <a routerLink="/" md-list-item (click)="layout.close()">Home</a>
       <a routerLink="/users" md-list-item (click)="layout.close()">Benuterverwaltung</a>
     </md-nav-list>
   </td-navigation-drawer>
