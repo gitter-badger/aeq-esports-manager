@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+md-sidenav-layout > md-content {
+  display: flex !important;
+  flex-direction: column !important;
+}
