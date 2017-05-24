@@ -1,12 +1,13 @@
-import { AfterViewInit, Component } from "@angular/core";
+import { AfterViewInit, Component, OnInit } from "@angular/core";
 import { ITdDataTableColumn, TdMediaService } from "@covalent/core";
+import { TitleService } from "../../services/title.service";
 
 @Component({
   selector: 'aem-admittances',
   templateUrl: './admittances.component.html',
   styleUrls: ['./admittances.component.scss']
 })
-export class AdmittancesComponent implements AfterViewInit {
+export class AdmittancesComponent implements OnInit, AfterViewInit {
 
   private data: any[] = [
     {sku: '1452-2', item: 'Pork Chops', price: 32.11},
@@ -18,8 +19,13 @@ export class AdmittancesComponent implements AfterViewInit {
     {name: 'price', label: 'Price (US$)', numeric: true, format: v => v.toFixed(2)},
   ];
 
-  constructor(public media: TdMediaService) {
+  constructor(public media: TdMediaService,
+              private _titleSerivce: TitleService) {
 
+  }
+
+  ngOnInit() {
+    this._titleSerivce.setTitle('Bewerbungen')
   }
 
   ngAfterViewInit() {

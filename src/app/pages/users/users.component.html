@@ -7,15 +7,15 @@
   </md-toolbar>
   <md-nav-list td-sidenav-content
                (click)="!media.query('gt-sm') && manageList.close()">
-    <a md-list-item routerLink="admittances" (click)="setTitle('Bewerbungen')">
+    <a md-list-item routerLink="admittances">
       <md-icon>rate_review</md-icon>
       Bewerbungen
     </a>
-    <a md-list-item (click)="setTitle('Rekruten')">
+    <a md-list-item>
       <md-icon>school</md-icon>
       Rekruten</a>
     <md-divider></md-divider>
-    <a md-list-item (click)="setTitle('Mitglieder')">
+    <a md-list-item>
       <md-icon>people</md-icon>
       Mitglieder</a>
   </md-nav-list>
